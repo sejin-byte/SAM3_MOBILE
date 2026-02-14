@@ -1,0 +1,30 @@
+# Visual Eval Image Manifest
+# source_sa1b_dir: data/sa1b
+# scanned_json: 3000 / 33558
+# selected_images: 24
+# format: relative_image_path
+outputs/baseline/test_image.png
+data/sa1b/sa_1090183.jpg
+data/sa1b/sa_1090469.jpg
+data/sa1b/sa_1091866.jpg
+data/sa1b/sa_1094121.jpg
+data/sa1b/sa_1096145.jpg
+data/sa1b/sa_224081.jpg
+data/sa1b/sa_231550.jpg
+data/sa1b/sa_5864836.jpg
+data/sa1b/sa_1087608.jpg
+data/sa1b/sa_1088620.jpg
+data/sa1b/sa_1092262.jpg
+data/sa1b/sa_1092801.jpg
+data/sa1b/sa_231033.jpg
+data/sa1b/sa_232904.jpg
+data/sa1b/sa_5862636.jpg
+data/sa1b/sa_5872108.jpg
+data/sa1b/sa_1085737.jpg
+data/sa1b/sa_1087553.jpg
+data/sa1b/sa_1092163.jpg
+data/sa1b/sa_224268.jpg
+data/sa1b/sa_229449.jpg
+data/sa1b/sa_230824.jpg
+data/sa1b/sa_5863934.jpg
+data/sa1b/sa_5868742.jpg
