@@ -1,0 +1,18 @@
+# Visual Eval Prompt Set (Phase2/Video/Quantization 공통)
+# 한 줄에 하나의 텍스트 프롬프트
+segment everything
+objects in the image
+all objects
+things and stuff
+person
+face
+car
+bicycle
+dog
+cat
+food
+chair
+table
+plant
+building
+
