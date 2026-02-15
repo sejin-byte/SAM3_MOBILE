@@ -1,0 +1,24 @@
+# OS / editor
+.DS_Store
+.claude/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local experiment artifacts (do not track)
+checkpoints/
+logs/
+outputs/
+tmp/
+
+# Local datasets (do not track)
+data/sa1b/
+data/sa_co/
+data/sa_v/
+
+# Misc
+.ipynb_checkpoints/

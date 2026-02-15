@@ -173,6 +173,7 @@ def _apply_video_ckpt(student, video_ckpt: str):
 def _load_teacher(teacher_model: str, device: torch.device):
     from transformers import Sam3Model
     from distillation.config import DistillationConfig
+    from distillation.trainer import resize_teacher_rope
 
     cfg = DistillationConfig()
     teacher_dtype = torch.float16 if device.type == "mps" else torch.float32
