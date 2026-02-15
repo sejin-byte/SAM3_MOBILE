@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import os
+import re
 import sys
 
 import torch
@@ -79,6 +80,15 @@ def selective_reset_text_pathway(student, checkpoint_path: str):
     print(f"  Reset: {reset_params/1e6:.1f}M params (text pathway)")
 
     return ckpt.get("global_step", 0)
+
+
+def phase1_ckpt_sort_key(filename: str):
+    """Sort phase1 checkpoints by numeric step (then epoch)."""
+    step_m = re.search(r"step(\d+)\.pt$", filename)
+    epoch_m = re.search(r"epoch(\d+)", filename)
+    step = int(step_m.group(1)) if step_m else -1
+    epoch = int(epoch_m.group(1)) if epoch_m else -1
+    return (step, epoch, filename)
 
 
 def main():
@@ -211,9 +221,11 @@ def main():
     elif args.phase == 2 and args.resume is None:
         ckpt_dir = config.checkpoint_dir
         if os.path.exists(ckpt_dir):
-            phase1_ckpts = sorted([
-                f for f in os.listdir(ckpt_dir) if f.startswith("phase1_")
-            ])
+            phase1_ckpts = [
+                f for f in os.listdir(ckpt_dir)
+                if f.startswith("phase1_") and f.endswith(".pt")
+            ]
+            phase1_ckpts.sort(key=phase1_ckpt_sort_key)
             if phase1_ckpts:
                 latest = os.path.join(ckpt_dir, phase1_ckpts[-1])
                 print(f"  Auto-loading Phase 1 checkpoint: {latest}")
